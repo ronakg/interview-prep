@@ -1,3 +1,8 @@
+"""
+Write a program to generate a complete binary search tree provided a sorted
+list of integers.
+"""
+
 import math
 
 class Node:
@@ -32,6 +37,17 @@ def traverse_tree(root):
     return tree
 
 def complete_bst(data):
+    """
+    Generate a complete binary search tree. Input is a sorted list of integers.
+
+    Algorithm:
+
+    - Find height of the binary search tree
+    - Find out how many nodes are leaf nodes
+    - Find out how many leaf nodes are to the left of the root
+    - Use this to find out the index of the root node from input list
+    - Recursively call complete_bst() on the left half and right half of the list
+    """
     if not data:
         return None
 
